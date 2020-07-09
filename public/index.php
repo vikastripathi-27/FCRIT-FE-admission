@@ -234,7 +234,7 @@
                     </div>
                     <div class="col">
                         <label for="landline">Landline</label>
-                        <input type="number" class="form-control" id="landline" name="landline" placeholder="Enter your landline no." required>
+                        <input type="number" class="form-control" id="landline" name="landline" placeholder="Enter your landline no.">
                     </div>
                 </div>
                 <hr class="my-4">

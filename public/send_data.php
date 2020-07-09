@@ -82,8 +82,14 @@ if(isset($_POST['submit'])) {
 	$insert3 = mysqli_query($con, "INSERT INTO `mark_details` (`hsc_math`,`hsc_ph`,`hsc_chem`,`hsc_total`,`cet_cap_merit_no`,`cet_math`,`cet_phy`,`cet_chem`,`cet_total`,`jee_cap_merit_no`,`jee_math`,`jee_phy`,`jee_chem`,`jee_total`,`hsc_marks`,`hsc_yop`,`ssc_marks`,`ssc_yop`,`hsc_boardname`,`ssc_boardname`,`diploma_marks`,`diploma_yop`,`diploma_boradname`,`ssc_total`,`diploma_total`) VALUES ('$hscMaths','$hscPhysics','$hscChem','$hscTotal','$cetMerit','$cetMaths','$cetPhysics','$cetChem','$cetTotal','$jeeMerit','$jeeMaths','$jeePhysics','$jeeChem','$jeeTotal','$hscObtained','$hscYear','$sscObtained','$sscYear','$hscBoard','$sscBoard','$diplomaObtained','$diplomaYear','$diplomaBoard','$sscTotal','$diplomaTotal')");
 
 	if(($insert1)&&($insert2)&&($insert3)) {
-		echo "submiited successfully<br>";
-		echo "<script>window.location.href='index.php'</script>";
+		echo "<h2>Form submitted successfully<h2><br>";
+		echo "<a href=''>Go to FCRIT website</a><br><br>";
+
+		$sql = "SELECT `Application_NO` FROM `student_details` WHERE cap_app_id='$capId'";
+		$result = $con->query($sql);
+		$row = $result->fetch_assoc();
+		$id = $row["Application_NO"];
+		echo "Your application id is ".$id;
 	}
 
 
